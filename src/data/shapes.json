@@ -1,32 +1,8 @@
 [
   {
-    "id": "1747488362667",
+    "id": "1747498065882",
     "type": "Circle",
-    "color": "Red 2",
-    "size": 21
-  },
-  {
-    "id": "1747488976212",
-    "type": "triangulo",
-    "color": "verde",
-    "size": 35
-  },
-  {
-    "id": "1747492254501",
-    "type": "Triangulo",
-    "color": "verde",
-    "size": 12
-  },
-  {
-    "id": "1747492473215",
-    "type": "Rectangulo",
-    "color": "Rojo",
-    "size": 23
-  },
-  {
-    "id": "1747492512614",
-    "type": "Rectangulo",
-    "color": "Rojo 3",
-    "size": 23
+    "color": "#e3fc03",
+    "size": 1
   }
 ]
