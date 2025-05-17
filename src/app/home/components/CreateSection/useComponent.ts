@@ -1,7 +1,8 @@
 "use client";
 
+import { isHexColor } from "@/lib/functions";
 import { trpc } from "@/lib/trpc/client";
-import { useState } from "react";
+import { useMemo, useState } from "react";
 import { toast } from "sonner";
 
 const useComponent = () => {
@@ -41,14 +42,28 @@ const useComponent = () => {
     });
   };
 
+  const handleColorChange = (value: string) => {
+    setColor(value);
+    if (value && !isHexColor(value)) {
+      toast.warning("The color format is not correct. use an hex like: #ff0000");
+    }
+  };
+
+  const isSaveDisable = useMemo(() => {
+    if (isHexColor(color) && size > 0 && type !== '' ) return false
+    return true
+  }, [color, size, type])
+
   return {
     color,
     createShape,
+    isSaveDisable,
     type,
-    size,
     suggestColor,
+    handleColorChange,
     handleSubmit,
     handleSuggestColor,
+    isHexColor,
     setColor,
     setSize,
     setType,

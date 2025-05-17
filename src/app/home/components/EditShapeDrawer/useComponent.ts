@@ -1,10 +1,11 @@
 "use client";
 
 import { trpc } from "@/lib/trpc/client";
-import { useState } from "react";
+import { useMemo, useState } from "react";
 import { TShape } from "@/lib/trpc/types";
 import { useRouter, useSearchParams } from "next/navigation";
 import { toast } from "sonner";
+import { isHexColor } from "@/lib/functions";
 
 const useComponent = ({ shape }: { shape: TShape }) => {
   const [type, setType] = useState(shape.type);
@@ -45,9 +46,15 @@ const useComponent = ({ shape }: { shape: TShape }) => {
     closeDrawer();
   };
 
+  const isSaveDisable = useMemo(() => {
+    if (isHexColor(color) && size > 0 && type !== "") return false;
+    return true;
+  }, [color, size, type]);
+
   return {
     color,
     isOpen,
+    isSaveDisable,
     loading: updateShape.isLoading,
     type,
     size,

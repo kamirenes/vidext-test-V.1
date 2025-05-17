@@ -12,11 +12,13 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { TShape } from "@/lib/trpc/types";
 import useComponent from "./useComponent";
+import { ColorInput } from "@/components/custom/colorInput";
 
 export function EditShapeDrawer({ shape }: { shape: TShape }) {
   const {
     color,
     isOpen,
+    isSaveDisable,
     loading,
     type,
     size,
@@ -66,13 +68,9 @@ export function EditShapeDrawer({ shape }: { shape: TShape }) {
               >
                 Color
               </label>
-              <Input
-                type="text"
-                placeholder="Color (e.g. red)"
-                value={color}
-                onChange={(e) => setColor(e.target.value)}
-                className="border p-1"
-                title="Color"
+              <ColorInput
+                color={color}
+                handleColorChange={(val) => setColor(val)}
               />
             </div>
             <div className="w-50">
@@ -94,7 +92,7 @@ export function EditShapeDrawer({ shape }: { shape: TShape }) {
           </div>
           <DrawerFooter>
             <div className="flex justify-end gap-2">
-              <Button onClick={handleUpdate} disabled={loading}>
+              <Button onClick={handleUpdate} disabled={loading || isSaveDisable}>
                 Save
               </Button>
               <DrawerClose asChild>
