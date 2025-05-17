@@ -10,5 +10,23 @@
     "type": "triangulo",
     "color": "verde",
     "size": 35
+  },
+  {
+    "id": "1747492254501",
+    "type": "Triangulo",
+    "color": "verde",
+    "size": 12
+  },
+  {
+    "id": "1747492473215",
+    "type": "Rectangulo",
+    "color": "Rojo",
+    "size": 23
+  },
+  {
+    "id": "1747492512614",
+    "type": "Rectangulo",
+    "color": "Rojo 3",
+    "size": 23
   }
 ]

@@ -4,6 +4,7 @@ import { trpc } from "@/lib/trpc/client";
 import { useState } from "react";
 import { TShape } from "@/lib/trpc/types";
 import { useRouter, useSearchParams } from "next/navigation";
+import { toast } from "sonner";
 
 const useComponent = ({ shape }: { shape: TShape }) => {
   const [type, setType] = useState(shape.type);
@@ -14,6 +15,12 @@ const useComponent = ({ shape }: { shape: TShape }) => {
   const updateShape = trpc.shape.update.useMutation({
     onSuccess: () => {
       refreshList.shape.getAll.invalidate();
+      toast.success("Updated");
+    },
+    onError: (error) => {
+      toast.error("Error updating the shape", {
+        description: error.message,
+      });
     },
   });
 

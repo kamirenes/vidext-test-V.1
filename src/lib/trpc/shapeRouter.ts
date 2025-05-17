@@ -20,7 +20,7 @@ export const shapeRouter = router({
     try {
       return await readShapes();
     } catch (e) {
-      throw new Error("Error loading the shapes list");
+      throw new Error(`Error loading the shapes list: ${e}`);
     }
   }),
 
@@ -33,8 +33,8 @@ export const shapeRouter = router({
         shapes.push(newShape);
         await writeShapes(shapes);
         return newShape;
-      } catch (error) {
-        throw new Error("Error when you try to create a shape");
+      } catch (e) {
+        throw new Error(`Error when you try to create a shape: ${e}`);
       }
     }),
 
@@ -56,7 +56,7 @@ export const shapeRouter = router({
         await writeShapes(shapes);
         return input;
       } catch (e) {
-        throw new Error("Error when you try to updating a shape");
+        throw new Error(`Error when you try to updating a shape: ${e}`);
       }
     }),
 
@@ -67,7 +67,7 @@ export const shapeRouter = router({
       await writeShapes(filtered);
       return { success: true };
     } catch (e) {
-      throw new Error("Error when you try to deleting a shape");
+      throw new Error(`Error when you try to deleting a shape: ${e}`);
     }
   }),
 });
