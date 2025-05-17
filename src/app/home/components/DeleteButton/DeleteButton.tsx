@@ -7,8 +7,8 @@ export function DeleteButton({ shape }: { shape: TShape }) {
   const { handleDelete } = useComponent({ shape });
 
   return (
-    <Button variant="outline" onClick={handleDelete}>
-      Eliminar
+    <Button variant="destructive" onClick={handleDelete}>
+      Delete
     </Button>
   );
 }

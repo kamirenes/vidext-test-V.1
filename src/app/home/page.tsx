@@ -1,5 +1,11 @@
-import HomeLayout from './components/HomeLayout/HomeLayout';
+import { CreateSection } from "./components/CreateSection/CreateSection";
+import ShapeList from "./components/ShapesList/ShapesList";
 
 export default async function HomePage() {
-  return  <HomeLayout />
+  return (
+    <div>
+      <CreateSection />
+      <ShapeList />
+    </div>
+  );
 }

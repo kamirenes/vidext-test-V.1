@@ -2,7 +2,13 @@
   {
     "id": "1747488362667",
     "type": "Circle",
-    "color": "Red",
+    "color": "Red 2",
     "size": 21
+  },
+  {
+    "id": "1747488976212",
+    "type": "triangulo",
+    "color": "verde",
+    "size": 35
   }
 ]

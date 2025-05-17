@@ -12,16 +12,24 @@ export default function ShapeList() {
   if (error) return <p>Error: {error.message}</p>;
 
   return (
-    <ul>
+    <div className="mt-12">
+      <label htmlFor="type" className="text-xl font-medium text-foreground">
+        List of shapes
+      </label>
+      <ul className="mt-4">
       {data?.map((shape: TShape) => (
-        <div key={shape.id} className="flex justify-between items-center">
+        <div key={shape.id} className="flex justify-between items-center mt-2">
           <span>
             {shape.type} - {shape.color} - {shape.size}
           </span>
-          <EditShapeDrawer shape={shape} />
-          <DeleteButton shape={shape} />
+          <div className="flex justify-end gap-2">
+            <EditShapeDrawer shape={shape} />
+            <DeleteButton shape={shape} />
+          </div>
         </div>
       ))}
     </ul>
+    </div>
+    
   );
 }
