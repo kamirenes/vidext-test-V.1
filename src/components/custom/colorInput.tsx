@@ -15,7 +15,7 @@ function ColorInput({
         type="text"
         placeholder="#000000"
         value={color}
-        onChange={(e) => handleColorChange(e.target.value)}
+        onBlur={(e) => handleColorChange(e.target.value)}
         className="pl-10"
       />
     </div>
