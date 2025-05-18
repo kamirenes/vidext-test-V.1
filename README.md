@@ -29,3 +29,11 @@ To see the documentation of the components, you need run the storybook server:
 ```bash
 npm run storybook
 ```
+
+## Test
+
+To run the unit test run:
+
+```bash
+npm run test
+```
