@@ -3,7 +3,7 @@ import { Button } from "@/components/ui/button";
 import useComponent from "./useComponent";
 import { Input } from "@/components/ui/input";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { ColorInput } from "@/components/custom/colorInput";
+import { ColorInput } from "@/components/custom/ColorInput";
 
 export function CreateSection() {
   const {

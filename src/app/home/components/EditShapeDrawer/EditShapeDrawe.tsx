@@ -12,7 +12,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { TShape } from "@/lib/trpc/types";
 import useComponent from "./useComponent";
-import { ColorInput } from "@/components/custom/colorInput";
+import { ColorInput } from "@/components/custom/ColorInput";
 
 export function EditShapeDrawer({ shape }: { shape: TShape }) {
   const {

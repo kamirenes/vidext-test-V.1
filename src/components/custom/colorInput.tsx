@@ -1,12 +1,10 @@
 import { Input } from "../ui/input";
+import { TColorInputProps } from "./types";
 
 function ColorInput({
   color,
   handleColorChange,
-}: {
-  color: string;
-  handleColorChange: (val: string) => void;
-}) {
+}: TColorInputProps) {
   return (
     <div className="relative w-full">
       <span
